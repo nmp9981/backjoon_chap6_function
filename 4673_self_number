@@ -1,0 +1,24 @@
+def self_num():
+  li = []
+  num = 1
+  #생성자를 통해 원래수 구하기
+  while num<10000:
+    d = num
+    num = str(num)
+    for i in range(0,len(num)):
+      d += int(num[i])
+    li.append(d)
+    num = int(num)
+    num += 1
+  #중복제거후 집합생성
+  set_li = set(li)
+  n=[]
+  for i in range(1,10000):
+    n.append(i)
+  n = set(n)
+  #차집합이용 (n-set_li)
+  sub_li = sorted(n - set_li)
+  for j in range(0,len(sub_li)):
+    print(sub_li[j])
+
+self_num()
