@@ -1,0 +1,5 @@
+def sum_n(a):
+  sums = 0
+  for i in range(0,len(a)):
+    sums += a[i]
+  return sums
