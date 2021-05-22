@@ -1,0 +1,21 @@
+#한수(n<=1000)
+def han_number(n):
+  if n<100:#1,2자리수는 각 자리수가 등차수열이므로 한수
+    count = n
+    print(count)
+  elif n == 1000:
+    count = 144
+    print(144)#1000은 한수가 아니므로 999와 결과 동일
+  else:
+    count = 99
+    for k in range(100,n+1):
+      i = k
+      i = str(i)
+      #등차수열 판별(n<1000)
+      mid = len(i)//2
+      if 2*int(i[mid]) == int(i[0]) + int(i[len(i)-1]):#한수
+        count += 1
+    print(count)  
+
+n = int(input())#n입력
+han_number(n)#함수 
